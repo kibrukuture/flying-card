@@ -1,0 +1,148 @@
+body {
+  height: 100vh;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
+.wrap {
+  margin-top: 100px;
+  transform-style: preserve-3d;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+.wrap > div {
+  padding: 50px;
+  position: absolute;
+  text-align: center;
+  height: 50px;
+  width: 100px;
+  transform: rotateX(50deg) rotateZ(30deg);
+  font-size: 20px;
+  font-family: serif;
+  font-variants: small-cap;
+  letter-spacing: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  border: 2px solid
+    radial-gradient(
+      circle,
+      rgba(2, 0, 36, 1) 26%,
+      rgba(189, 118, 122, 1) 58%,
+      rgba(0, 212, 255, 1) 81%
+    );
+}
+.wrap > div:nth-child(1) {
+  cursor: pointer;
+  z-index: 1;
+  background: black;
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 26%,
+    rgba(189, 118, 122, 1) 58%,
+    rgba(0, 212, 255, 1) 81%
+  );
+  color: white;
+}
+.wrap > div:nth-child(2) {
+  z-index: -1;
+  color: white;
+  background: radial-gradient(
+    circle,
+    rgba(128, 156, 31, 1) 0%,
+    rgba(205, 0, 12, 1) 48%,
+    rgba(67, 21, 122, 1) 77%
+  );
+}
+.wrap > div:nth-child(3) {
+  z-index: -2;
+  color: white;
+  background: radial-gradient(
+    circle,
+    rgba(6, 48, 9, 1) 29%,
+    rgba(205, 168, 0, 1) 76%,
+    rgba(67, 21, 122, 1) 100%
+  );
+}
+.top {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  top: 0px;
+  left: 0px;
+}
+
+@keyframes two {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    top: 100px;
+    left: 0px;
+  }
+}
+.mid {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  top: 100px;
+  left: 0px;
+  animation: two 2s ease-in-out;
+}
+@keyframes twominus {
+  0% {
+    top: 100px;
+    left: 0px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
+}
+.-mid {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+
+  left: 0px;
+  animation: twominus 2s ease-in-out;
+}
+@keyframes three {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    top: 200px;
+    left: 0px;
+  }
+}
+.bottom {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  left: 0px;
+  top: 200px;
+  animation: three 2s ease-in-out;
+}
+@keyframes threeminus {
+  0% {
+    top: 200px;
+    left: 0px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
+}
+.-bottom {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  top: 0px;
+  left: 0px;
+  animation: threeminus 2s ease-in-out;
+}
